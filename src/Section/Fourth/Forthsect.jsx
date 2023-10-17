@@ -4,9 +4,9 @@ const Forthsect = () => {
     return (
         <div>
             <h1 className="text-5xl font-bold text-center mt-24 mb-28">Top Categories on This Week</h1>
-         <div className="lg:flex  justify-between gap-5 mb-10">
+         <div className="lg:flex p-8 justify-between gap-5 mb-10">
                 <div>
-                    <img className="rounded-full" src={'https://i.ibb.co/YhXPfY2/3-3-245x245.jpg'} alt="" />
+                    <img className="rounded-full w-[250px]" src={'https://i.ibb.co/9gd7sFp/dsd2.jpg'} alt="" />
                     <h1 className="text-3xl mt-5 font-semibold ml-10">Mans ware</h1>
                     <p className="font-bold ml-16"> 10 product</p>
                 </div>

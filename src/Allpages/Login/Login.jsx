@@ -1,17 +1,22 @@
 import { useContext, useState } from "react";
 import { Authcontext } from "../../Firebase/Context";
 import Swal from "sweetalert2";
+import { useLocation, useNavigate } from "react-router-dom";
+import { FcGoogle } from "react-icons/fc";
 
 
 const Login = () => {
-    const { singnusers } = useContext(Authcontext)
+    const { singnusers,googlelogin } = useContext(Authcontext)
     const [passwrong, setpasswrong] = useState('');
+    const location = useLocation();
+    const navigate = useNavigate()
     const handlelogin = e => {
        
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
         console.log(email, password)
+
         setpasswrong('')
         singnusers(email,password)
         .then(res => {
@@ -19,15 +24,27 @@ const Login = () => {
             Swal.fire({
                 position: 'top-end',
                 icon: 'success',
-                title: 'Your work has been saved',
+                title: 'Your suceessfully login',
                 showConfirmButton: false,
                 timer: 1500
             })
+            navigate(location?.state ? location.state : '/')
         })
         .catch(error => {
             console.log(error)
             setpasswrong(error.message)
         })
+    }
+
+    const handlegoogle = () => {
+        googlelogin()
+            .then(res => {
+                console.log(res.user)
+                navigate(location?.state ? location.state : '/')
+            })
+            .catch(error => {
+                console.log(error)
+            })
     }
 
     return (
@@ -112,6 +129,10 @@ const Login = () => {
                          Register
                         </a>
                     </p>
+                </div>
+                <div className=" mb-7">
+
+                    <button onClick={handlegoogle} className="btn w-full font-semibold"> <FcGoogle className="text-2xl"></FcGoogle>Google</button>
                 </div>
             </div>
 
