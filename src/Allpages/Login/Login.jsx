@@ -1,12 +1,33 @@
+import { useContext, useState } from "react";
+import { Authcontext } from "../../Firebase/Context";
+import Swal from "sweetalert2";
 
 
 const Login = () => {
-
+    const { singnusers } = useContext(Authcontext)
+    const [passwrong, setpasswrong] = useState('');
     const handlelogin = e => {
+       
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
         console.log(email, password)
+        setpasswrong('')
+        singnusers(email,password)
+        .then(res => {
+            console.log(res.user)
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Your work has been saved',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        })
+        .catch(error => {
+            console.log(error)
+            setpasswrong(error.message)
+        })
     }
 
     return (
@@ -76,7 +97,12 @@ const Login = () => {
                     </div>
                 </div>
                 <div className="p-6 pt-0">
-                    <input type="submit" value="Sign in" className="btn btn-secondary w-full" />
+ <input type="submit" value="Sign in" className="btn btn-secondary w-full" />
+                    <p className="text-center">
+                        {
+                            passwrong && <span className=" text-red-400">{passwrong}</span>
+                        }
+                    </p>
                     <p className="flex justify-center mt-6 font-sans text-sm antialiased font-light leading-normal text-inherit">
                         You are new here?Please
                         <a
