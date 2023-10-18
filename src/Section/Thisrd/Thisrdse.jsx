@@ -3,7 +3,7 @@ import { Ri24HoursFill } from 'react-icons/ri';
 
 const Thisrdse = () => {
     return (
-        <div className="mt-20 flex justify-center ">
+        <div className="mt-20 flex justify-between items-center max-w-screen-xl mx-auto">
 
             <div className="bg-gray-100 p-12">
                 <AiOutlineCar className='text-6xl'></AiOutlineCar> 

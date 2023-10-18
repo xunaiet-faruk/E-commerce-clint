@@ -16,7 +16,8 @@ const Router = createBrowserRouter([
         children:[
             {
                 path:'/',
-                element:<Home></Home>
+                element:<Home></Home>,
+                loader:() => fetch('/Homecard.json')
             },
             {
                 path:'/addproduct',
@@ -33,6 +34,10 @@ const Router = createBrowserRouter([
             {
                 path:'/register',
                 element:<Register></Register>
+            },
+            {
+                path:'/amajon',
+               
             }
         ]
     },

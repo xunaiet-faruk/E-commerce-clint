@@ -50,7 +50,7 @@ const Login = () => {
     return (
         <form onSubmit={handlelogin}>
 
-            <div className="relative flex lg:ml-[470px] mb-10 mt-12 flex-col text-gray-700 bg-white shadow-md w-96 rounded-xl bg-clip-border">
+            <div className="relative flex lg:ml-[470px] ml-8 md:ml-48 lg:ml-0 mb-10 mt-12 flex-col text-gray-700 bg-white shadow-md w-96 rounded-xl bg-clip-border">
                 <div className="relative grid mx-4 mb-4 -mt-6 overflow-hidden text-white shadow-lg h-28 place-items-center rounded-xl bg-gradient-to-tr from-pink-600 to-pink-400 bg-clip-border shadow-pink-500/40">
                     <h3 className="block font-sans text-3xl antialiased font-semibold leading-snug tracking-normal text-white">
                         Sign In

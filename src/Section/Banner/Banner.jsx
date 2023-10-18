@@ -2,7 +2,7 @@
 
 const Banner = () => {
     return (
-        <div className="">
+        <div className="max-w-screen-xl mx-auto">
             <div className="relative">
                 <img className="w-full" src={'https://i.ibb.co/b15627g/slider-1.jpg'} alt="" />
             </div>
