@@ -6,6 +6,8 @@ import Addproduct from "../Allpages/Addproduct/Addproduct";
 import Mycard from "../Allpages/Mycard/Mycard";
 import Login from "../Allpages/Login/Login";
 import Register from "../Allpages/Register/Register";
+import Privaterote from "../Privateroute/Privaterote";
+import Cards from "../Details/Cards";
 
 
 const Router = createBrowserRouter([
@@ -21,11 +23,11 @@ const Router = createBrowserRouter([
             },
             {
                 path:'/addproduct',
-                element:<Addproduct></Addproduct>
+                element: <Privaterote><Addproduct></Addproduct></Privaterote>
             },
             {
                 path:'/mycard',
-                element:<Mycard></Mycard>
+                element: <Privaterote><Mycard></Mycard></Privaterote>
             },
             {
                 path:'/login',
@@ -36,9 +38,11 @@ const Router = createBrowserRouter([
                 element:<Register></Register>
             },
             {
-                path:'/amajon',
-               
-            }
+                path:'/details/:brands',
+                element:<Cards></Cards>,
+                loader: ({params}) => fetch(`http://localhost:5010/amazon/${params.brands}`)
+            },
+          
         ]
     },
 ]);

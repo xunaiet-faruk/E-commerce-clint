@@ -14,7 +14,7 @@ const Brandcard = ({ cardbarand }) => {
                             
 
 
-                            <Link to={'/amajon'}>
+                            <Link to={`/details/${item.brand_name}`}>
 
                                 <div className=" h-72 bg-base-100 shadow-xl rounded-lg">
                                     <figure><img className="h-[200px] rounded-lg" src={item.image} /></figure>

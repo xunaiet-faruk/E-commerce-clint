@@ -1,32 +1,32 @@
 [
     {
         "id": "1",
-        "brand_name": "Amazon",
+        "brand_name": "amazon",
         "image": "https://i.ibb.co/sj3LXwz/a-as.webp"
     },
     {
         "id": "2",
-        "brand_name": " Walmart",
+        "brand_name": "walmart",
         "image": "https://i.ibb.co/JCXpWSj/wl.png"
     },
     {
         "id": "3",
-        "brand_name": "Alibaba",
+        "brand_name": "alibaba",
         "image": "https://i.ibb.co/xJyGDLr/ALISA.png"
     },
     {
         "id": "4",
-        "brand_name": " ebay",
+        "brand_name": "ebay",
         "image": "https://i.ibb.co/t3Wnf5G/aliba.png"
     },
     {
         "id": "5",
-        "brand_name": "Target",
+        "brand_name": "target",
         "image": "https://i.ibb.co/Fmm6mjC/ta.png"
     },
     {
         "id": "6",
-        "brand_name": "Best Buy",
+        "brand_name": "best_Buy",
         "image": "https://i.ibb.co/nf5GY2q/be.png"
     }
 ]
