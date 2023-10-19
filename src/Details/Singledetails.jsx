@@ -12,7 +12,7 @@ const Singledetails = ({ items }) => {
      
 
             <div className="max-w-screen-xl mx-auto lg:p-10 grid lg:grid-cols-2 grid-cols-1 ">
-                <div className="bg-gray-200 w-[350px] p-2 rounded-lg">
+                <div className="bg-gray-200 w-[350px] p-2 rounded-lg flex flex-col ">
                     <div>
                         <img src={photo} className="w-full h-[230px]" alt="" />
                     </div>
@@ -25,13 +25,18 @@ const Singledetails = ({ items }) => {
                         <p className="font-semibold">Rating:{rating}</p>
                         <p className="font-semibold">Types : {select}</p>
                     </div>
+                    <div className="flex-grow"> </div>
                     <div className="mb-2">
                     <Link to={`/items/${_id}`}>
                             <button className="btn btn-primary w-full">Details</button>
                     </Link>
                     </div>
                     <div className="mb-2">
-                        <button className="btn btn-secondary w-full">Update</button>
+                      <Link to={`/update/${_id}`}>
+                      
+                            <button className="btn btn-secondary w-full">Update</button>
+                      
+                      </Link>
                     </div>
                 </div>
             </div>

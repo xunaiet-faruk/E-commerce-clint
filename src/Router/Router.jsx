@@ -9,6 +9,7 @@ import Register from "../Allpages/Register/Register";
 import Privaterote from "../Privateroute/Privaterote";
 import Cards from "../Details/Cards";
 import Carddetails from "../Details/Carddetails";
+import Update from "../Component/Amojonslider/Update/Update";
 
 
 const Router = createBrowserRouter([
@@ -49,6 +50,11 @@ const Router = createBrowserRouter([
                 loader: ({ params }) => fetch(`http://localhost:5010/product/${params.id}`),
              
             },
+            {
+                path:'/update/:id',
+                element:<Update></Update>,
+                loader: ({ params }) => fetch(`http://localhost:5010/product/${params.id}`)
+            }
           
           
         ]
