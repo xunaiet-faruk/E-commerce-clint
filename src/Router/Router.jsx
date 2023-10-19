@@ -8,6 +8,7 @@ import Login from "../Allpages/Login/Login";
 import Register from "../Allpages/Register/Register";
 import Privaterote from "../Privateroute/Privaterote";
 import Cards from "../Details/Cards";
+import Carddetails from "../Details/Carddetails";
 
 
 const Router = createBrowserRouter([
@@ -42,6 +43,11 @@ const Router = createBrowserRouter([
                 element:<Cards></Cards>,
                 loader: ({params}) => fetch(`http://localhost:5010/amazon/${params.brands}`)
             },
+            {
+                path:'/items/:id',
+                element:<Carddetails></Carddetails>,
+                loader: ({ params }) => fetch(`http://localhost:5010/product/${params.id}`)
+            }
           
         ]
     },

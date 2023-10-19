@@ -6,6 +6,7 @@ import Amazonslider from "../Component/Amojonslider/Amazonslider";
 const Cards = () => {
     const alldata =useLoaderData()
     console.log(alldata)
+   
     return (
 
         <div>

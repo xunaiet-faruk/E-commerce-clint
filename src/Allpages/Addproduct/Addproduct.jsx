@@ -83,10 +83,11 @@ const handlesubmit =e =>{
                 </div>
                 <select name="select" className="select w-full mb-4 mt-5 border rounded-md">
                     <option disabled selected>Pick your own category</option>
+                    <option>Cloths</option>
+                    <option>Screen care</option>
+                    <option>hair product</option>
                     <option>Shoes</option>
-                    <option>Bag</option>
-                    <option>Drees</option>
-                    <option>Jeans</option>
+                    <option>Bags</option>
                 </select>
                 <div className="mt-5">
                     <textarea name="description" id="" cols="30" placeholder="Description" rows="6" className="w-full"></textarea>
