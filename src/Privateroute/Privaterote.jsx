@@ -4,9 +4,10 @@ import { useContext } from "react";
 
 
 const Privaterote = ({children}) => {
+   
+    const { user, loader } = useContext(Authcontext);
     const location = useLocation();
-    const { user, loading } = useContext(Authcontext);
-    if (loading) {
+    if (loader) {
         return <div className="flex justify-center"><span className="loading loading-spinner loading-lg mt-28"></span></div>
     }
     if (user) {

@@ -20,7 +20,7 @@ const Context = ({ children }) => {
     }
 
     const googlelogin = () =>{
-
+            setLoader(true)
             return signInWithPopup(auth,provider)
 
     }
@@ -32,8 +32,8 @@ const Context = ({ children }) => {
     useEffect(() => {
 
         const unsubscribe = onAuthStateChanged(auth, currenuser => {
-            setLoader(false)
             setUser(currenuser)
+            setLoader(false)
             console.log('user login here', currenuser)
         })
         return () => {
