@@ -6,9 +6,6 @@ const Singledetails = ({ items }) => {
         select,
         description } =items;
 
-
-
-
     return (
         <>
    

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 
 const Brandcard = ({ cardbarand }) => {
-    console.log(cardbarand)
+  
     return (
         <>       
         

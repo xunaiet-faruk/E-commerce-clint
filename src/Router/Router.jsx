@@ -46,8 +46,10 @@ const Router = createBrowserRouter([
             {
                 path:'/items/:id',
                 element:<Carddetails></Carddetails>,
-                loader: ({ params }) => fetch(`http://localhost:5010/product/${params.id}`)
-            }
+                loader: ({ params }) => fetch(`http://localhost:5010/product/${params.id}`),
+             
+            },
+          
           
         ]
     },
