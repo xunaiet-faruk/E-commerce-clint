@@ -12,13 +12,13 @@ const Mycard = () => {
 
     useEffect(() => {
 
-        fetch(`http://localhost:5010/mycard`)
+        fetch(`https://ecomerce-side-backend.vercel.app/mycard`)
             .then(res => res.json())
             .then(data => {
 
                 const myCard = data.filter(items => items.userId == user.uid)
                 // console.log(myCard)
-                fetch(`http://localhost:5010/amazonall`)
+                fetch(`https://ecomerce-side-backend.vercel.app/amazonall`)
                     .then(res => res.json())
                     .then(products => {
                         const newArr = [];
@@ -50,7 +50,7 @@ const Mycard = () => {
         }).then((result) => {
 
             if (result.isConfirmed) {
-                fetch(`http://localhost:5010/delete-cart/${id}`, {
+                fetch(`https://ecomerce-side-backend.vercel.app/delete-cart/${id}`, {
                     method: "DELETE",
                 }).then(res => res.json())
                     .then(data => {
@@ -80,7 +80,7 @@ const Mycard = () => {
             {
                 productcard?.map(item => <MyCardItem key={item._id} handleDelete={handleDelete} card={item} />)
             }
-           
+
         </div>
     );
 };

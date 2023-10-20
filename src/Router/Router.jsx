@@ -15,48 +15,48 @@ import Update from "../Component/Amojonslider/Update/Update";
 const Router = createBrowserRouter([
     {
         path: "/",
-        element:<Layout></Layout>,
-        errorElement:<Erro></Erro>,
-        children:[
+        element: <Layout></Layout>,
+        errorElement: <Erro></Erro>,
+        children: [
             {
-                path:'/',
-                element:<Home></Home>,
-                loader:() => fetch('/Homecard.json')
+                path: '/',
+                element: <Home></Home>,
+                loader: () => fetch('/Homecard.json')
             },
             {
-                path:'/addproduct',
+                path: '/addproduct',
                 element: <Privaterote><Addproduct></Addproduct></Privaterote>
             },
             {
-                path:'/mycard',
+                path: '/mycard',
                 element: <Privaterote><Mycard></Mycard></Privaterote>
             },
             {
-                path:'/login',
-                element:<Login></Login>
+                path: '/login',
+                element: <Login></Login>
             },
             {
-                path:'/register',
-                element:<Register></Register>
+                path: '/register',
+                element: <Register></Register>
             },
             {
-                path:'/details/:brands',
-                element:<Cards></Cards>,
-                loader: ({params}) => fetch(`http://localhost:5010/amazon/${params.brands}`)
+                path: '/details/:brands',
+                element: <Cards></Cards>,
+                loader: ({ params }) => fetch(`https://ecomerce-side-backend.vercel.app/amazon/${params.brands}`)
             },
             {
-                path:'/items/:id',
+                path: '/items/:id',
                 element: <Privaterote><Carddetails></Carddetails></Privaterote>,
-                loader: ({ params }) => fetch(`http://localhost:5010/product/${params.id}`),
-             
+                loader: ({ params }) => fetch(`https://ecomerce-side-backend.vercel.app/product/${params.id}`),
+
             },
             {
-                path:'/update/:id',
+                path: '/update/:id',
                 element: <Privaterote><Update></Update></Privaterote>,
-                loader: ({ params }) => fetch(`http://localhost:5010/product/${params.id}`)
+                loader: ({ params }) => fetch(`https://ecomerce-side-backend.vercel.app/product/${params.id}`)
             }
-          
-          
+
+
         ]
     },
 ]);

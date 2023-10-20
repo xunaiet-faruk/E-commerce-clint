@@ -1,6 +1,6 @@
 
 import { useContext } from "react";
-import {  useLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import { Authcontext } from "../Firebase/Context";
 import Swal from "sweetalert2";
 
@@ -9,33 +9,33 @@ const Carddetails = () => {
 
 
     const data = useLoaderData()
-    const {user} =useContext(Authcontext)
+    const { user } = useContext(Authcontext)
     console.log(user)
     console.log(data)
 
-    const handleCard=() =>{
-        const card = {userId: user.uid,productId : data._id}
+    const handleCard = () => {
+        const card = { userId: user.uid, productId: data._id }
 
-        fetch(`http://localhost:5010/addcard`,{
-            method:"POST",
-            headers:{
-                'content-type':'application/json'
+        fetch(`https://ecomerce-side-backend.vercel.app/addcard`, {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
             },
-            body:JSON.stringify(card)
+            body: JSON.stringify(card)
         })
-        .then(res => res.json())
-        .then(data => {
+            .then(res => res.json())
+            .then(data => {
 
-            if(data){
-                Swal.fire({
-                    position: 'top-end',
-                    icon: 'success',
-                    title: 'Your work has been saved',
-                    showConfirmButton: false,
-                    timer: 1500
-                })
-            }
-        })
+                if (data) {
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Your work has been saved',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+            })
     }
 
 
@@ -50,12 +50,12 @@ const Carddetails = () => {
             <p className="text-center text-4xl font-bold mb-4">{data.description}</p>
             <p className="text-center text-4xl font-bold mb-4">{data.price}</p>
 
-   
-
-                <button onClick={handleCard} className="btn bg-gray-300 px-16 hover:bg-black hover:text-white mb-5">ADD CARD </button>
 
 
-       
+            <button onClick={handleCard} className="btn bg-gray-300 px-16 hover:bg-black hover:text-white mb-5">ADD CARD </button>
+
+
+
 
         </div>
     );

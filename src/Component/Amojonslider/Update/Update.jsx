@@ -17,7 +17,7 @@ const Update = () => {
         const select = e.target.select.value;
         const products = { name, price, rating, photo, description, select }
 
-        fetch(`http://localhost:5010/products/${updateProduct._id}`, {
+        fetch(`https://ecomerce-side-backend.vercel.app/products/${updateProduct._id}`, {
             method: "PUT",
             headers: {
                 'Content-type': 'application/json'
@@ -29,7 +29,7 @@ const Update = () => {
             .then(res => res.json())
             .then(data => {
 
-                if(data){
+                if (data) {
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
@@ -39,12 +39,11 @@ const Update = () => {
                     })
                 }
             })
-          
+
 
 
     }
 
-    
 
 
     return (
@@ -111,7 +110,7 @@ const Update = () => {
                     <textarea name="description" defaultValue={updateProduct.description} id="" cols="30" placeholder="Description" rows="6" className="w-full"></textarea>
                 </div>
                 <div className="mt-5">
-                    <input type="submit" value="Add Products" className="btn btn-block hover:btn-secondary" />
+                    <input type="submit" value="Submit Button" className="btn btn-block hover:btn-secondary" />
                 </div>
 
 

@@ -3,45 +3,45 @@ import Swal from "sweetalert2";
 
 const Addproduct = () => {
 
-const handlesubmit =e =>{
-    e.preventDefault();
-    const name =e.target.name.value;
-    const brand_name =e.target.brand_name.value;
-    const price =e.target.price.value;
-    const rating =e.target.rating.value;
-    const photo = e.target.photo.value;
-    const description = e.target.description.value;
-    const select = e.target.select.value;
-    const users ={name,brand_name,price,rating,photo,description,select}
-    console.log(users);
+    const handlesubmit = e => {
+        e.preventDefault();
+        const name = e.target.name.value;
+        const brand_name = e.target.brand_name.value;
+        const price = e.target.price.value;
+        const rating = e.target.rating.value;
+        const photo = e.target.photo.value;
+        const description = e.target.description.value;
+        const select = e.target.select.value;
+        const users = { name, brand_name, price, rating, photo, description, select }
+        console.log(users);
 
-    fetch('http://localhost:5010/amazon', {
-        method: "POST",
-        headers: {
-            'content-type': 'application/json'
-        },
-        body: JSON.stringify(users)
-    })
-        .then(res => res.json())
-        .then(data => {
-            if (data.insertedId){
-                Swal.fire({
-                    icon: 'success',
-                    title: 'suceessfully addded',
-                   
-                    footer: '<a href="">Why do I have this issue?</a>'
-                })
-            }
-
+        fetch('https://ecomerce-side-backend.vercel.app/amazon', {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(users)
         })
-   
-}
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'suceessfully addded',
+
+                        footer: '<a href="">Why do I have this issue?</a>'
+                    })
+                }
+
+            })
+
+    }
 
 
     return (
         <div className="p-10 m-8 rounded-md bg-blue-100">
             <form onSubmit={handlesubmit}>
-               <div className="flex gap-6">
+                <div className="flex gap-6">
                     <div className="form-control w-1/2">
                         <label className="label">
                             <span className="label-text">NAME</span>
@@ -60,8 +60,8 @@ const handlesubmit =e =>{
                             <input type="text" placeholder="brand name" name="brand_name" className="input input-bordered w-full" />
                         </label>
                     </div>
-               </div>
-               <div className="flex gap-6">
+                </div>
+                <div className="flex gap-6">
                     <div className="form-control w-1/2">
                         <label className="label">
                             <span className="label-text">Price</span>
@@ -80,7 +80,7 @@ const handlesubmit =e =>{
                             <input type="text" placeholder="Rating" name="rating" className="input input-bordered w-full" />
                         </label>
                     </div>
-               </div>
+                </div>
                 <div className="form-control w-full">
                     <label className="label">
                         <span className="label-text">Photo</span>
@@ -102,10 +102,10 @@ const handlesubmit =e =>{
                     <textarea name="description" id="" cols="30" placeholder="Description" rows="6" className="w-full"></textarea>
                 </div>
                 <div className="mt-5">
-                    <input type="submit" value="Add Products"  className="btn btn-block hover:btn-secondary"/>
+                    <input type="submit" value="Add Products" className="btn btn-block hover:btn-secondary" />
                 </div>
-               
-               
+
+
             </form>
         </div>
     );
