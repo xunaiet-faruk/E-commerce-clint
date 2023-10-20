@@ -46,13 +46,13 @@ const Router = createBrowserRouter([
             },
             {
                 path:'/items/:id',
-                element:<Carddetails></Carddetails>,
+                element: <Privaterote><Carddetails></Carddetails></Privaterote>,
                 loader: ({ params }) => fetch(`http://localhost:5010/product/${params.id}`),
              
             },
             {
                 path:'/update/:id',
-                element:<Update></Update>,
+                element: <Privaterote><Update></Update></Privaterote>,
                 loader: ({ params }) => fetch(`http://localhost:5010/product/${params.id}`)
             }
           

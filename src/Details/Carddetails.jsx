@@ -2,6 +2,7 @@
 import { useContext } from "react";
 import {  useLoaderData } from "react-router-dom";
 import { Authcontext } from "../Firebase/Context";
+import Swal from "sweetalert2";
 
 
 const Carddetails = () => {
@@ -23,7 +24,18 @@ const Carddetails = () => {
             body:JSON.stringify(card)
         })
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => {
+
+            if(data){
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Your work has been saved',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            }
+        })
     }
 
 
@@ -50,3 +62,6 @@ const Carddetails = () => {
 };
 
 export default Carddetails;
+
+
+
