@@ -5,9 +5,6 @@ import { useEffect } from "react";
 import { useState } from "react";
 
 
-
-
-
 const Cards = () => {
     const alldata = useLoaderData()
 

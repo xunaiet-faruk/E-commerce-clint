@@ -5,6 +5,7 @@ import Forthsect from "../../Section/Fourth/Forthsect";
 import Brandcard from "./Brandcard/Brandcard";
 
 
+
 const Home = () => {
     const cardbarand =useLoaderData()
     return (
@@ -13,7 +14,7 @@ const Home = () => {
             <Brandcard cardbarand={cardbarand}></Brandcard>
             <Secndb></Secndb>
             <Forthsect></Forthsect>
-            {/* <Thisrdse></Thisrdse> */}
+            {/* <Thisrdse/> */}
         </div>
     );
 };
