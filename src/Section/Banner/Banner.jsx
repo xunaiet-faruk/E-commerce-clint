@@ -10,7 +10,7 @@ const Banner = () => {
             text: (
                 <>
                     <h1 className='text-6xl font-bold '>Men Shoes Step Up Your Style</h1>
-                    <p className='text-xl'>Premium Comfort StefanSlippers.2024 Reebok The Best Classical <br />Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,<br /> doloremque.</p>
+                    <p className='text-xl'>Premium Comfort StefanSlippers.2024 Reebok The Best Classical <br />Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,<br /> doloremque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, exercitationem.</p>
                 </>
             )
         },
@@ -34,19 +34,20 @@ const Banner = () => {
                     <h1 className='text-6xl font-bold'>Elevate Your Style Latest</h1>
 
                     <p className='text-xl'>
-                        Discover the ultimate blend of sophistication and practicality with our smart leather bag. Crafted for the modern man, it offers sleek design and ample functionality to keep you organized and stylish.
+                        Discover the ultimate blend of sophistication and practicality with our smart leather bag. Crafted for the modern man, it offers sleek design and ample functionality to keep you organized and stylish. Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     </p>
                 </>
             )
         },
         {
-            image: "https://i.ibb.co/W5LWbZf/image-removebg-preview-2024-09-03-T120300-124.png",
+            image: "https://i.ibb.co/jVfxxXD/image-removebg-preview-2024-09-04-T161913-550.png",
             text: (
                 <>
                     <h1 className='text-6xl font-bold'>Unleash Your Radiance</h1>
 
                     <p className='text-xl'>
                         Discover the perfect shade to enhance your natural beauty. Our premium makeup products are designed to give you a flawless finish, whether for a daily look or a special occasion.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, nihil.
                     </p>
                 </>
             )
@@ -78,7 +79,7 @@ const Banner = () => {
                 {slides.map((slide, index) => (
                     <div key={index} className="flex justify-evenly  w-full flex-shrink-0 ">
                         {/* Text Content */}
-                        <div className="w-1/2 px-4 space-y-5 mt-20">
+                        <div className="w-1/2 px-4 space-y-7 mt-20">
                             <div className='flex  items-center gap-2'>
                                 <FaFireAlt className='text-red-600 text-xl' />
 
@@ -87,7 +88,7 @@ const Banner = () => {
                             {slide.text}
                             <div className='flex gap-12 items-center'>
 
-                                <div className='flex items-center gap-1 bg-gray-200 w-32 py-2 rounded-xl justify-center cursor-pointer hover:bg-gray-300 hover:text-red-600'>
+                                <div className='flex items-center gap-1 bg-gray-200 w-36 py-3 rounded-xl justify-center cursor-pointer hover:bg-gray-300 hover:text-red-600'>
                                     <MdTravelExplore className='text-xl' />
                                     <h1 className=''>Explore</h1>
 

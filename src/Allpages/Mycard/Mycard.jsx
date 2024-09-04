@@ -54,7 +54,7 @@ const Mycard = () => {
                     method: "DELETE",
                 }).then(res => res.json())
                     .then(data => {
-                        console.log(data);
+                        console.log("deleted dataa",data);
                         if (data.deletedCount > 0) {
                             Swal.fire(
                                 'Deleted!',
@@ -76,7 +76,7 @@ const Mycard = () => {
 
 
     return (
-        <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-1 justify-between max-w-screen-xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-1 justify-between max-w-screen-xl mx-auto mb-12 gap-5">
             {
                 productcard?.map(item => <MyCardItem key={item._id} handleDelete={handleDelete} card={item} />)
             }

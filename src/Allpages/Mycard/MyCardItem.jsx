@@ -4,26 +4,53 @@ import { BiSolidHandDown, BiSolidHandRight } from 'react-icons/bi';
 
 const MyCardItem = ({ card, handleDelete }) => {
     const {photo,name,select,price,_id} = card;
+    console.log(card);
     return (
         <>
-            <div  className="bg-gray-100 shadow-xl md:ml-40 lg:ml-0 ml-0 grid grid-cols-1  lg:grid-cols-2 md:grid-cols-1  justify-between rounded-xl mb-10 md:w-[400px] lg:w-[600px]">
-                <div className="">
-                    <img className="w-full md:h-[180px] lg:h-[200px]" src={photo} alt="" />
-                </div>
-                <div className="ml-2 mt-10 space-y-3 text-xl ">
-                    <h2 className="font-semibold">{name}</h2>
-                    <h2 className="font-semibold">{select}</h2>
-                    <h2 className="font-semibold">{price}</h2>
-                   <div className='flex justify-end mt-12'>
+            <article className="flex shadow-xl transition hover:shadow-xl hover:shadow-red-300">
+                <div className="rotate-180 p-2 [writing-mode:_vertical-lr]">
+                    <time
                         
-                        <AiTwotoneDelete onClick={() => handleDelete(_id)} className="text-3xl   mr-2 text-red-400"></AiTwotoneDelete>
-                   </div>
+                        className="flex items-center justify-between gap-4 text-xs font-bold uppercase "
+                    >
+                        <span>{card?.select}</span>
+                        <span className="w-px flex-1 bg-gray-900/10"></span>
+                        <span>{card?.brand_name}</span>
+                    </time>
                 </div>
 
-    
+                <div className="hidden sm:block sm:basis-56">
+                    <img
+                        alt=""
+                        src={card?.photo}
+                        className="aspect-square h-full w-full object-cover"
+                    />
+                </div>
 
+                <div className="flex flex-1 flex-col justify-between">
+                    <div className="border-s border-gray-900/10 p-4 sm:border-l-transparent sm:p-6">
+                        <a href="#">
+                            <h3 className="font-bold uppercase ">
+                               {card?.name}
+                            </h3>
+                        </a>
 
-            </div>  
+                        <p className="mt-2 line-clamp-3 text-sm/relaxed ">
+                            {card?.description}
+                        </p>
+                    </div>
+
+                    <div className="sm:flex sm:items-end sm:justify-end">
+                        <a
+                            href="#"
+                            className="block bg-red-600 px-5 py-3 text-center text-xs font-bold uppercase text-white transition hover:bg-red-400"
+                        >
+                            <button onClick={() => handleDelete(_id)}> Delete</button>
+                          
+                        </a>
+                    </div>
+                </div>
+            </article> 
         </>
     );
 };

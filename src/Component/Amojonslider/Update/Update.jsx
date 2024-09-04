@@ -47,7 +47,7 @@ const Update = () => {
 
 
     return (
-        <div className="p-10 m-8 rounded-md bg-gray-200">
+        <div className="p-10 mx-6 mb-12 rounded-xl shadow-xl border-t-2 border-b-2 border-red-600 ">
             <form onSubmit={handlesubmit}>
                 <div className="flex gap-6">
                     <div className="form-control w-1/2">
@@ -107,7 +107,7 @@ const Update = () => {
                     <option>Bags</option>
                 </select>
                 <div className="mt-5">
-                    <textarea name="description" defaultValue={updateProduct.description} id="" cols="30" placeholder="Description" rows="6" className="w-full"></textarea>
+                    <textarea name="description" defaultValue={updateProduct.description} id="" cols="30" placeholder="Description" rows="6" className="w-full border-2"></textarea>
                 </div>
                 <div className="mt-5">
                     <input type="submit" value="Submit Button" className="btn btn-block hover:btn-secondary" />

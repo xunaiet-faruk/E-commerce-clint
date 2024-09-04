@@ -122,7 +122,7 @@ const Navbar = () => {
                     :
 
                         <Link to='/login'>
-                            <button className="btn  bg-blue-200 font-bold px-8">Login</button>
+                            <button className="py-1 rounded-md bg-red-600 text-white font-bold px-8">Login</button>
                         </Link>
                 }
 

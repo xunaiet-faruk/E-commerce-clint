@@ -19,6 +19,7 @@ const Cards = () => {
             .then(data => {
                 if (data?.length) {
                     setdata(data[0])
+                    console.log(data);
                 }
             })
 
@@ -33,7 +34,7 @@ const Cards = () => {
                 <Amazonslider data={data}></Amazonslider>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-screen-xl mx-auto gap-4 mt-12 mb-12">
 
                 {
 
